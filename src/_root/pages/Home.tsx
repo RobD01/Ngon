@@ -10,6 +10,10 @@ const Home = () => {
     isError: isErrorPosts,
   } = useGetRecentPosts();
 
+  if (isErrorPosts) {
+    console.log(isErrorPosts);
+  }
+
   return (
     <div className="flex flex-1">
       <div className="home-container">

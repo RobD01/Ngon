@@ -61,6 +61,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
     navigate("/");
   }
 
+  console.log(action, isLoadingCreate);
+
   return (
     <Form {...form}>
       <form

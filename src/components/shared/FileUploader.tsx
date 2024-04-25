@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
 import { Button } from "../ui/button";
 
@@ -23,6 +23,8 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
     onDrop,
     accept: { "image/*": [".png", ".gif", ".jpg", ".jpeg", ".svg"] },
   });
+
+  console.log(isDragActive);
 
   return (
     <div {...getRootProps()} className="flex flex-center flex-col rounded-xl ">

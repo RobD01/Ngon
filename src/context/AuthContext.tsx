@@ -1,4 +1,3 @@
-import { useToast } from "@/components/ui/use-toast";
 import { getCurrentUser } from "@/lib/appwrite/api";
 import { IUser } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";

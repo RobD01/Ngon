@@ -248,7 +248,7 @@ export async function deleteSavedPost(savedRecordId: string) {
     return { status: "Ok" };
   } catch (error) {
     console.error("Error deleting saved post:", error);
-    return { status: "Error", message: error.message };
+    return { status: "Error", message: error };
   }
 }
 

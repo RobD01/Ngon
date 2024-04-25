@@ -6,7 +6,6 @@ import {
 } from "@/lib/react-query/queriesAndMutations";
 import { checkIsLiked } from "@/lib/utils";
 import { Models } from "appwrite";
-import { log } from "console";
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 
@@ -16,7 +15,7 @@ type PostStatsProps = {
 };
 
 const PostStats = ({ post, userId }: PostStatsProps) => {
-  const likesList = post.likes.map((user: Model.Document) => user.$id);
+  const likesList = post.likes.map((user: Models.Document) => user.$id);
 
   const [likes, setLikes] = useState(likesList);
   const [isSaved, setIsSaved] = useState(false);
