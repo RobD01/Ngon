@@ -14,7 +14,7 @@ const AuthLayout = () => {
             <Outlet />
           </section>
           <img
-            src={baseUrl + "/assets/images/side-img.svg"}
+            src={baseUrl + "/assets/images/donuts.webp"}
             alt="logo"
             className=" md:block h-screen object-cover bg-no=repeat sm:w-full"
           />
