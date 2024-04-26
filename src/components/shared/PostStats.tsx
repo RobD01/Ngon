@@ -8,6 +8,7 @@ import { checkIsLiked } from "@/lib/utils";
 import { Models } from "appwrite";
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
+import { baseUrl } from "@/constants";
 
 type PostStatsProps = {
   post: Models.Document;
@@ -72,8 +73,8 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
         <img
           src={
             checkIsLiked(likes, userId)
-              ? "/assets/icons/liked.svg"
-              : "/assets/icons/like.svg"
+              ? baseUrl + "/assets/icons/liked.svg"
+              : baseUrl + "/assets/icons/like.svg"
           }
           alt="like"
           width={20}
@@ -88,7 +89,11 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
           <Loader />
         ) : (
           <img
-            src={isSaved ? "/assets/icons/saved.svg" : "/assets/icons/save.svg"}
+            src={
+              isSaved
+                ? baseUrl + "/assets/icons/saved.svg"
+                : baseUrl + "/assets/icons/save.svg"
+            }
             alt="like"
             width={20}
             height={20}

@@ -1,4 +1,5 @@
 import { Outlet, Navigate } from "react-router-dom";
+import { baseUrl } from "@/constants";
 
 const AuthLayout = () => {
   const isAuthenticated = false;
@@ -13,7 +14,7 @@ const AuthLayout = () => {
             <Outlet />
           </section>
           <img
-            src="/assets/images/side-img.svg"
+            src={baseUrl + "/assets/images/side-img.svg"}
             alt="logo"
             className=" md:block h-screen w-1/2 object-cover bg-no=repeat sm:hidden"
           />

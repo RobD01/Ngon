@@ -3,6 +3,7 @@ import { multiFormatDateString } from "@/lib/utils";
 import { Models } from "appwrite";
 import { Link } from "react-router-dom";
 import PostStats from "./PostStats";
+import { baseUrl } from "@/constants";
 
 type PostCardProps = {
   post: Models.Document;
@@ -20,7 +21,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <img
               src={
                 post?.creator?.imageUrl ||
-                "/assets/icons/profile-placeholder.svg"
+                baseUrl + "/assets/icons/profile-placeholder.svg"
               }
               className="rounded-full w-12 lg:h-12"
             />
@@ -42,7 +43,12 @@ const PostCard = ({ post }: PostCardProps) => {
           to={`/update-post/${post.$id}`}
           className={`${user.id !== post.creator.$id && "hidden"}`}
         >
-          <img src="/assets/icons/edit.svg" alt="edit" width={20} height={20} />
+          <img
+            src={baseUrl + "/assets/icons/edit.svg"}
+            alt="edit"
+            width={20}
+            height={20}
+          />
         </Link>
       </div>
       <Link to={`/posts/${post.$id}`}>

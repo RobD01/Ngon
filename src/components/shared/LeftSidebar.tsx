@@ -5,6 +5,7 @@ import { useSignOutAccount } from "@/lib/react-query/queriesAndMutations";
 import { useUserContext } from "@/context/AuthContext";
 import { sidebarLinks } from "@/constants";
 import { INavLink } from "@/types";
+import { baseUrl } from "@/constants";
 
 const LeftSidebar = () => {
   const { pathname } = useLocation();
@@ -20,7 +21,7 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
-            src="/assets/images/logo2.png"
+            src={baseUrl + "/assets/images/logo2.png"}
             alt="logo"
             width={170}
             height={36}
@@ -69,7 +70,7 @@ const LeftSidebar = () => {
         className=" leftsidebar-link mt-3 flex flex-row gap-6 items-center"
         onClick={() => signOut()}
       >
-        <img src="/assets/icons/logout.svg" alt="logout" />
+        <img src={baseUrl + "/assets/icons/logout.svg"} alt="logout" />
         <p className="small-medium lg:base-medium">Logout</p>
       </Button>
     </nav>
