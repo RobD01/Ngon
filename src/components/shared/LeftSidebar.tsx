@@ -18,7 +18,7 @@ const LeftSidebar = () => {
   }, [isSuccess]);
   return (
     <nav className="leftsidebar">
-      <div className="flex flex-col gap-11">
+      <div className="flex flex-col gap-4">
         <Link to="/" className="flex gap-3 items-center">
           <img
             src={baseUrl + "/assets/images/logo2.png"}
@@ -27,7 +27,7 @@ const LeftSidebar = () => {
             height={36}
           />
         </Link>
-        <Link to={`/profile/${user.id}`} className="flex gap-3 itmes-center">
+        <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
           <img
             src={user.imageUrl || "/assets/images/profile-placeholder.svg"}
             alt="profile"
@@ -38,7 +38,7 @@ const LeftSidebar = () => {
             <p className="small-regular text-light-3">@{user.username}</p>
           </div>
         </Link>
-        <ul className="flex flex-col gap-6">
+        <ul className="flex flex-col gap-1">
           {sidebarLinks.map((link: INavLink) => {
             const isActive = pathname == link.route;
 
@@ -64,15 +64,16 @@ const LeftSidebar = () => {
             );
           })}
         </ul>
+        {/* logout */}
+        <Button
+          variant="ghost"
+          className=" leftsidebar-link flex flex-row flex-start items-center"
+          onClick={() => signOut()}
+        >
+          <img src={baseUrl + "/assets/icons/logout.svg"} alt="logout" />
+          <p className="small-medium lg:base-medium ml-5">Logout</p>
+        </Button>
       </div>
-      <Button
-        variant="ghost"
-        className=" leftsidebar-link mt-3 flex flex-row gap-6 items-center"
-        onClick={() => signOut()}
-      >
-        <img src={baseUrl + "/assets/icons/logout.svg"} alt="logout" />
-        <p className="small-medium lg:base-medium">Logout</p>
-      </Button>
     </nav>
   );
 };

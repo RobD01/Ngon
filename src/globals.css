@@ -5,11 +5,20 @@
 @tailwind utilities;
 
 :root {
-  --color1: #f6ff92;
-  --color2: #b2e4d7;
-  --color3: #c6f0e5;
+  /* background */
+  --color1: #faefec;
+
+  /* Navigation bar */
+  --color2: #b6dbee;
+
+  /* Link active */
+  --color3: #9acfe9;
+
+  /* Form field */
   --color4: #fffff0;
-  --color5: #2296c8;
+
+  /* Button */
+  --color5: #80bcbd;
 }
 
 @layer base {
@@ -238,7 +247,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] h-full;
+    @apply hidden md:flex px-6 py-3 flex-col justify-between min-w-[270px];
     background-color: var(--color2);
   }
 
@@ -297,10 +306,11 @@
 
   /* Button */
   .shad-button_primary {
-    @apply bg-red text-light-1 flex gap-2 !important;
+    @apply text-light-1 flex gap-2 !important;
+    background-color: var(--color5);
   }
   .shad-button_primary:hover {
-    background-color: #8b0000;
+    @apply shadow-md;
   }
 
   .shad-button_dark_4 {
