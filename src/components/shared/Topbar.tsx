@@ -29,22 +29,20 @@ const Topbar = () => {
         <div className="flex gap-4 ">
           <Button
             variant="ghost"
-            className="shad-button_ghost border-solid border-2 border-white p-2 rounded-lg"
+            className="shad-button_ghost border-solid "
             onClick={() => signOut()}
           >
-            <img src={baseUrl + "/assets/icons/logout.svg"} alt="logout" /> Log
-            out
+            <img src={baseUrl + "/assets/icons/logout.svg"} alt="logout" />
           </Button>
-          <Link
-            to={`/profile/${user.id}`}
-            className="flex-center gap-3 border-solid border-2 border-white p-2 rounded-lg"
-          >
+          <Link to={`/profile/${user.id}`} className="flex-center gap-3">
             <img
-              src={user.imageUrl || "/assets/images/profile-placeholder.svg"}
+              src={
+                user.imageUrl ||
+                baseUrl + "/assets/images/profile-placeholder.svg"
+              }
               alt="profile"
               className="h-8 w-8 rounded-full"
             />{" "}
-            {user.name}
           </Link>
         </div>
       </div>

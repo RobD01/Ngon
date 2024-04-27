@@ -9,7 +9,21 @@ const AuthLayout = () => {
       {isAuthenticated ? (
         <Navigate to="/" />
       ) : (
-        <section className="flex flex-col sm:flex-row">
+        <section className="flex flex-col sm:flex-col">
+          <section className="flex flex-col items-center p-2">
+            <img
+              src={baseUrl + "/assets/images/logo2.png"}
+              alt="logo"
+              className="w-1/4"
+            />
+            <h1 className="text-4xl">
+              The best way to share your food adventures
+            </h1>
+            <h1>
+              Currently available on web browser only. Future releases will
+              include mobile apps{" "}
+            </h1>
+          </section>
           <section className="flex flex-1 items-center flex-col py-10 px-5">
             <Outlet />
           </section>
