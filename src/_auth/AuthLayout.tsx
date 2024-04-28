@@ -10,14 +10,15 @@ const AuthLayout = () => {
         <Navigate to="/" />
       ) : (
         <section className="flex flex-col sm:flex-col">
-          <section className="flex flex-col items-center p-2">
+          <section className="flex flex-col items-center p-2 text-center">
             <img
               src={baseUrl + "/assets/images/logo2.png"}
               alt="logo"
               className="w-1/4"
             />
-            <h1 className="text-4xl">
-              The best way to share your food adventures
+            <h1 className="text-4xl ">
+              The online community connecting all Foodies, restaurants, and
+              cafes
             </h1>
             <h1>
               Currently available on web browser only. Future releases will
@@ -28,9 +29,9 @@ const AuthLayout = () => {
             <Outlet />
           </section>
           <img
-            src={baseUrl + "/assets/images/donuts.webp"}
+            src={baseUrl + "/assets/images/mi-quang.jpg"}
             alt="logo"
-            className=" md:block h-screen object-cover bg-no=repeat sm:w-full"
+            className=" md:w-1/2 h-screen object-cover bg-no=repeat sm:w-full"
           />
         </section>
       )}

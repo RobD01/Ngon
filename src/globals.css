@@ -9,13 +9,13 @@
   --color1: #faefec;
 
   /* Navigation bar */
-  --color2: #b6dbee;
+  --color2: #d8f3da;
 
   /* Link active */
-  --color3: #9acfe9;
+  --color3: #c2e6c4;
 
   /* Form field */
-  --color4: #fffff0;
+  --color4: #;
 
   /* Button */
   --color5: #80bcbd;
@@ -296,8 +296,7 @@
   }
 
   .shad-input {
-    @apply h-12  border-none placeholder:text-dark-4 text-dark-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
-    background-color: var(--color4);
+    @apply h-12  bg-light-1 border-none placeholder:text-dark-4 text-dark-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   .shad-textarea {
@@ -320,4 +319,30 @@
   .shad-button_ghost {
     @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
   }
+}
+
+@keyframes wipeDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wipeUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.wipe-down-enter {
+  animation: wipeDown 0.5s ease forwards;
+}
+
+.wipe-up-exit {
+  animation: wipeUp 0.5s ease forwards;
 }
