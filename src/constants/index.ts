@@ -1,4 +1,4 @@
-const ghPages = false;
+const ghPages = true;
 export const baseUrl = ghPages ? "/Ngon" : "";
 
 export const sidebarLinks = [
