@@ -40,7 +40,7 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
       ) : (
         <div className="file_uploader-box">
           <img
-            src={baseUrl + "/assets/icons//file-upload.svg"}
+            src={baseUrl + "/assets/icons/file-upload.svg"}
             width={96}
             height={77}
             alt="file-upload"
