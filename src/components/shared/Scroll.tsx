@@ -15,10 +15,8 @@ const ScrollHideComponent = () => {
 
       if (isScrollingDown) {
         setIsVisible(false);
-        console.log("down");
       } else {
         setIsVisible(true);
-        console.log("up");
       }
     };
 
