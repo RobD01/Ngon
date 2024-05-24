@@ -3,7 +3,7 @@ import { baseUrl } from "@/constants";
 import { useUserContext } from "@/context/AuthContext";
 
 const AuthLayout = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = useUserContext().isAuthenticated;
 
   return (
     <>
