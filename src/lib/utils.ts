@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { CloudCog } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -52,5 +53,6 @@ export const multiFormatDateString = (timestamp: string = ""): string => {
 };
 
 export const checkIsLiked = (likeList: string[], userId: string) => {
-  return likeList.includes(userId);
+  console.log(5);
+  return likeList?.includes(userId);
 };
