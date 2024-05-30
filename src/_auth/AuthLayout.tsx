@@ -13,9 +13,9 @@ const AuthLayout = () => {
         <section className="flex flex-col sm:flex-col">
           <section className="flex flex-col items-center p-2 text-center">
             <img
-              src={baseUrl + "/assets/images/logo2.png"}
+              src={baseUrl + "/assets/images/logo-main.png"}
               alt="logo"
-              className="w-1/4"
+              className="w-1/4 lg:w-1/6"
             />
             <h1 className="text-4xl ">
               The online community connecting all Foodies, restaurants, and

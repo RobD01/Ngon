@@ -19,13 +19,16 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar">
       <div className="flex flex-col gap-4">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link
+          to="/"
+          className="flex gap-3 items-center text-xl rounded-xl border-4 border-rose-300 bg-white mx-2 px-2 text-rose-400"
+        >
           <img
-            src={baseUrl + "/assets/images/logo2.png"}
+            src={baseUrl + "/assets/images/logo-menu.png"}
             alt="logo"
-            width={170}
-            height={36}
-          />
+            width={50}
+          />{" "}
+          Ngon
         </Link>
         <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
           <img

@@ -68,8 +68,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
 
   return (
     <div className="flex justify-between items-center z-20">
-      {/* Likes, commented due to error */}
-      {post ? (
+      {likes || post ? (
         <div className="flex gap-2 mr-5">
           <img
             src={
@@ -83,7 +82,9 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
             className="cursor-pointer"
             onClick={handleLikePost}
           />
-          <p className="small-medium lg:base-medium">{likes.length}</p>
+          {likes ? (
+            <p className="small-medium lg:base-medium">{likes.length}</p>
+          ) : null}
         </div>
       ) : null}
       <div className="flex gap-2 ">
