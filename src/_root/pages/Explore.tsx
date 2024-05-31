@@ -1,22 +1,26 @@
+import { useEffect } from "react";
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import SearchResults from "@/components/shared/SearchResults";
 import { Input } from "@/components/ui/input";
 import { baseUrl } from "@/constants";
 import useDebounce from "@/hooks/useDebounce";
-import {
-  useGetPosts,
-  useSearchPosts,
-} from "@/lib/react-query/queriesAndMutations";
+import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Explore = () => {
+  const { ref, inView } = useInView({ threshold: 0.5 });
   const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedValue = useDebounce(searchValue, 500);
   const { data: searchedPosts, isFetching: isSearchFetching } =
     useSearchPosts(debouncedValue);
+
+  useEffect(() => {
+    if (inView && !searchValue) fetchNextPage();
+  }, [inView, searchValue, fetchNextPage]);
 
   if (!posts) {
     return (
@@ -83,6 +87,13 @@ const Explore = () => {
           ))
         )}
       </section>
+
+      {/* infinite scroll */}
+      {hasNextPage && !searchValue && (
+        <section ref={ref} className="mt-10">
+          <Loader />
+        </section>
+      )}
     </div>
   );
 };

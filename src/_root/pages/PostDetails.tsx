@@ -3,7 +3,7 @@ import PostStats from "@/components/shared/PostStats";
 import { Button } from "@/components/ui/button";
 import { baseUrl } from "@/constants";
 import { useUserContext } from "@/context/AuthContext";
-import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
+import { useGetPostById } from "@/lib/react-query/queries";
 import { multiFormatDateString } from "@/lib/utils";
 import { Link, useParams } from "react-router-dom";
 

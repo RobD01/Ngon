@@ -5,7 +5,7 @@ import {
   useGetCurrentUser,
   useLikePost,
   useSavePost,
-} from "@/lib/react-query/queriesAndMutations";
+} from "@/lib/react-query/queries";
 import { checkIsLiked } from "@/lib/utils";
 import { Models } from "appwrite";
 import React, { useEffect, useState } from "react";

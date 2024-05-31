@@ -332,8 +332,12 @@ export async function deletePost(postId: string, imageId: string) {
   }
 }
 
-export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
-  const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(10)];
+export async function getInfinitePosts({
+  pageParam,
+}: {
+  pageParam: number | null;
+}) {
+  const queries = [Query.orderDesc("$updatedAt"), Query.limit(3)];
 
   if (pageParam) {
     queries.push(Query.cursorAfter(pageParam.toString()));
@@ -346,7 +350,7 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
       queries
     );
 
-    if (!posts) throw Error;
+    if (!posts) return null;
 
     return posts;
   } catch (error) {
