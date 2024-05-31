@@ -4,14 +4,14 @@ import GridPostList from "./GridPostList";
 
 type SearchResultsProps = {
   isSearchFetching: boolean;
-  searchedPosts: Models.Document[] | undefined;
+  searchedPosts: Models.Document | undefined;
 };
 
 const SearchResults = ({
   isSearchFetching,
   searchedPosts,
 }: SearchResultsProps) => {
-  console.log(typeof searchedPosts);
+  console.log(searchedPosts?.documents);
 
   if (isSearchFetching) return <Loader />;
 
