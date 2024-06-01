@@ -171,6 +171,7 @@ export const useGetPosts = () => {
   const data = useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
     queryFn: getInfinitePosts,
+    // @ts-expect-error lastPage is number but result is string
     getNextPageParam: (lastPage) => {
       // If there's no data, there are no more pages.
       if (lastPage && lastPage?.documents.length === 0) {

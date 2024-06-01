@@ -77,12 +77,14 @@ const Explore = () => {
         {shouldShowSearchResults ? (
           <SearchResults
             isSearchFetching={isSearchFetching}
+            // @ts-expect-error SearchResult component is Model.document , but expect document[]
             searchedPosts={searchedPosts}
           />
         ) : shouldShowPosts ? (
           <p className="text-dark-4 mt-4 text-center w-full">End of posts</p>
         ) : (
           posts.pages.map((item, index) => (
+            // @ts-expect-error Model.document[]
             <GridPostList key={`page-${index}`} posts={item?.documents} />
           ))
         )}
