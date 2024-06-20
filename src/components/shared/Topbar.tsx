@@ -26,7 +26,7 @@ const Topbar = () => {
             alt="logo"
             width={40}
           />
-          Ngon
+          <span className="title">ngon</span>
         </Link>
 
         <div className="flex gap-4 ">

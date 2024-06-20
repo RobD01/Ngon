@@ -28,7 +28,7 @@ const LeftSidebar = () => {
             alt="logo"
             width={50}
           />{" "}
-          Ngon
+          <span className="title">ngon</span>
         </Link>
         <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
           <img

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -163,7 +164,7 @@
 
   /* Home */
   .home-container {
-    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-8 lg:p-14 custom-scrollbar;
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-5  md:px-8 lg:p-14 custom-scrollbar;
   }
 
   .home-posts {
@@ -239,11 +240,11 @@
 
   /* Grid Post List */
   .grid-container {
-    @apply w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-7 max-w-5xl;
+    @apply w-full flex flex-wrap gap-1 items-center;
   }
 
   .grid-post_link {
-    @apply flex rounded-[24px] shadow-md  cursor-pointer h-full w-full;
+    @apply shadow-md  cursor-pointer;
   }
 
   .grid-post_user {
@@ -270,11 +271,11 @@
 
   /* Post Card */
   .post-card {
-    @apply bg-light-1 rounded-3xl shadow-md p-5 lg:p-7 w-full max-w-screen-sm;
+    @apply bg-light-1 rounded-xl shadow-md sm:px-2 py-2 lg:p-3 w-full max-w-screen-sm;
   }
 
   .post-card_img {
-    @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[24px] object-cover mb-5;
+    @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[10px] object-cover mb-3;
   }
 
   /* Topbar */
@@ -350,4 +351,9 @@
 
 .wipe-up-exit {
   animation: wipeUp 0.5s ease forwards;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  @apply tracking-wide text-lg;
 }
