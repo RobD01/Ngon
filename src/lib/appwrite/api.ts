@@ -369,3 +369,22 @@ export async function searchPosts(searchTerm: string) {
     console.log(error);
   }
 }
+
+export async function getSavedPosts() {
+  try {
+    const currentAccount = await getCurrentUser();
+    const posts = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.savesCollectionId,
+      [
+        Query.equal("user", currentAccount?.$id),
+        Query.orderDesc("$createdAt"),
+        Query.limit(20),
+      ]
+    );
+
+    return posts;
+  } catch (error) {
+    console.log(error);
+  }
+}
