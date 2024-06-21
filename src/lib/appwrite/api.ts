@@ -376,7 +376,9 @@ export async function getSavedPosts() {
     const posts = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.savesCollectionId,
+
       [
+        // @ts-expect-error undefined for string
         Query.equal("user", currentAccount?.$id),
         Query.orderDesc("$createdAt"),
         Query.limit(20),
