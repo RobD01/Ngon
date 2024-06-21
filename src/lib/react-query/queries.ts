@@ -20,6 +20,7 @@ import {
   getInfinitePosts,
   searchPosts,
   getSavedPosts,
+  getUsers,
 } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost } from "@/types";
 import { QUERY_KEYS } from "./queryKeys";
@@ -201,5 +202,12 @@ export const useGetSavedPosts = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_RECENT_POSTS],
     queryFn: getSavedPosts,
+  });
+};
+
+export const useGetUsers = () => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.GET_USERS],
+    queryFn: getUsers,
   });
 };

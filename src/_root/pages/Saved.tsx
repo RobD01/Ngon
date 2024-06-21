@@ -11,17 +11,20 @@ const Saved = () => {
     ? savedList?.documents.map((item) => savedPost.push(item.post))
     : null;
 
+  console.log(savedPost);
+
   return (
     <div className="saved-container">
       <h2 className="h3-bold md:h2-bold w-full"> Saved Posts</h2>
-      {savedPost.length == 0 || isPending ? (
+      {isPending ? (
         <>
           <Loader /> Loading ...
+          {console.log("loading")}
         </>
-      ) : (
+      ) : savedPost.length > 0 ? (
         // @ts-expect-error Model.document[]
-        <GridPostList posts={savedPost} />
-      )}
+        <GridPostList key={savedPost?.$id} posts={savedPost} />
+      ) : null}
     </div>
   );
 };

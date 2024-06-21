@@ -19,7 +19,7 @@
   --color4: #;
 
   /* Button */
-  --color5: #80bcbd;
+  --color5: #de9a97;
 }
 
 @layer base {
@@ -286,7 +286,7 @@
 
   /* User card */
   .user-card {
-    @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8;
+    @apply flex items-center flex-col gap-4 bg-light-1 rounded-xl p-3 shadow-md w-full;
   }
 }
 
@@ -311,7 +311,7 @@
 
   /* Button */
   .shad-button_primary {
-    @apply text-light-1 flex gap-2 !important;
+    @apply text-light-1 flex gap-2 p-2 md:p-4 !important;
     background-color: var(--color5);
   }
   .shad-button_primary:hover {
@@ -355,5 +355,5 @@
 
 .title {
   font-family: "Montserrat", sans-serif;
-  @apply tracking-wide text-lg;
+  @apply tracking-widest text-lg font-bold;
 }
