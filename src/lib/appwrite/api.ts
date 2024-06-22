@@ -403,3 +403,16 @@ export async function getUsers() {
     console.log(error);
   }
 }
+
+export async function getUserById(userId: string) {
+  try {
+    const user = await databases.getDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      userId
+    );
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
+}
