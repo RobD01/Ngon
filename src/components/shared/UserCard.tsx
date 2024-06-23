@@ -13,7 +13,6 @@ type UserCardProps = {
 };
 
 const UserCard = ({ user }: UserCardProps) => {
-  console.log(user);
   return (
     <section className="user-card">
       <Link to={`/profile/${user.$id}`} className="flex flex-col items-center">

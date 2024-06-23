@@ -416,3 +416,26 @@ export async function getUserById(userId: string) {
     console.log(error);
   }
 }
+
+export async function getUserPosts(userId?: string) {
+  try {
+    const posts = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.postCollectionId,
+
+      [
+        // @ts-expect-error undefined for string
+        Query.equal("creator", userId),
+        Query.orderDesc("$createdAt"),
+        Query.limit(20),
+      ]
+    );
+
+    return posts;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ts-expect-error undefined for string
+// Query.equal("user", user?.$id),
