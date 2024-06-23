@@ -1,8 +1,7 @@
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import { baseUrl } from "@/constants";
-import { useUserContext } from "@/context/AuthContext";
-import { useGetUserById, useGetUserPosts } from "@/lib/react-query/queries";
+import { useGetUserById } from "@/lib/react-query/queries";
 import { useParams } from "react-router-dom";
 
 const Profile = () => {

@@ -1,7 +1,6 @@
 import BlankSnack from "@/components/shared/BlankSnack";
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
-import { baseUrl } from "@/constants";
 import { useGetSavedPosts } from "@/lib/react-query/queries";
 
 const Saved = () => {

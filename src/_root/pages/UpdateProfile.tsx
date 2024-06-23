@@ -1,10 +1,10 @@
 import { useGetUserById } from "@/lib/react-query/queries";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
 const UpdateProfile = () => {
   const { id } = useParams();
-  const { data: user, isPending } = useGetUserById(id || "");
+  const { data: user } = useGetUserById(id || "");
 
   // const form = useForm<z.infer<typeof ProfileValidation>>({
   //   resolver: zodResolver(ProfileValidation),
