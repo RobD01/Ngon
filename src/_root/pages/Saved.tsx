@@ -2,6 +2,7 @@ import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import { baseUrl } from "@/constants";
 import { useGetSavedPosts } from "@/lib/react-query/queries";
+import { useState } from "react";
 
 const Saved = () => {
   // const { data: currentUser } = useGetCurrentUser();
@@ -11,6 +12,29 @@ const Saved = () => {
   !isPending
     ? savedList?.documents.map((item) => savedPost.push(item.post))
     : null;
+
+  const imageList = [
+    "/assets/images/cupcake.svg",
+    "/assets/images/pizza.svg",
+    "/assets/images/coffee.svg",
+  ];
+
+  const [imageUrl, setImageUrl] = useState(imageList[0]);
+
+  const changeImage = () => {
+    setImageUrl(imageList[Math.floor(Math.random() * imageList.length)]);
+  };
+
+  const image = (
+    <img
+      src={baseUrl + imageUrl}
+      alt=""
+      className="w-1/4 sm:1/5"
+      onClick={changeImage}
+    />
+  );
+
+  console.log(savedList);
 
   return (
     <div className="saved-container">
@@ -26,12 +50,8 @@ const Saved = () => {
       ) : (
         <>
           {" "}
-          <h2>No saved post yet.... But here's a cupcake until then!</h2>
-          <img
-            src={baseUrl + "/assets/images/cupcake.svg"}
-            alt=""
-            className="w-1/4 sm:1/5"
-          />
+          <h2>No saved post yet.... But here's a snack until then!</h2>
+          {image}
         </>
       )}
     </div>
