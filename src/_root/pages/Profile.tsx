@@ -1,3 +1,4 @@
+import BlankSnack from "@/components/shared/BlankSnack";
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import { baseUrl } from "@/constants";
@@ -22,7 +23,7 @@ const Profile = () => {
       ) : (
         <>
           {/* Profile info */}
-          <section className="grid grid-cols-4 bg-white shadow-md py-3 px-2 md:px-5 gap-2 w-1/2 rounded-lg">
+          <section className="grid grid-cols-4 bg-white shadow-md py-3 px-2 md:px-5 gap-2 w-full lg:w-2/3 rounded-lg">
             <div className="col-span-1">
               <img
                 src={
@@ -30,7 +31,7 @@ const Profile = () => {
                   baseUrl + "/assets/images/profile-placeholder.svg"
                 }
                 alt="profile"
-                className="size-12 md:size-16 rounded-full"
+                className="size-10 md:size-14 rounded-full"
               />
             </div>
             <div className="col-span-2">
@@ -54,8 +55,10 @@ const Profile = () => {
           <section>
             {isPending ? (
               <Loader />
-            ) : (
+            ) : post?.length > 0 ? (
               <GridPostList key={post?.$id} posts={post} />
+            ) : (
+              <BlankSnack item="posts" />
             )}
           </section>
         </>

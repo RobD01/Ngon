@@ -34,10 +34,10 @@ const BlankSnack = (item: BlankSnackProps) => {
   );
 
   return (
-    <>
-      <h2>There are no {item.item} here, Here's a snack until then </h2>
+    <section className="flex flex-col items-center gap-2">
+      <h2>There are no {item.item} here, but here's a snack until then </h2>
       {image}
-    </>
+    </section>
   );
 };
 

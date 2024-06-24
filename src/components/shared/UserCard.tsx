@@ -1,5 +1,5 @@
 import { baseUrl } from "@/constants";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
 type UserCardProps = {
@@ -24,10 +24,10 @@ const UserCard = ({ user }: UserCardProps) => {
           className="size-12 rounded-full"
         />
         <p className="base-medium lg:body-bold">{user.name}</p>
-        <p className="">{user.username}</p>
+        <p className="">@{user.username}</p>
       </Link>
 
-      <Button className="shad-button_primary">Follow</Button>
+      {/* <Button className="shad-button_primary">Follow</Button> */}
     </section>
   );
 };
