@@ -7,7 +7,7 @@ import GridImageList from "@/components/shared/GridImageList";
 
 const AuthLayout = () => {
   const isAuthenticated = useUserContext().isAuthenticated;
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -75,14 +75,14 @@ const AuthLayout = () => {
           <section className="grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col gap-2 flex-wrap items-center">
               <img
-                src="/public/assets/images/screenshot - mobile.png"
+                src="/assets/images/screenshot - mobile.png"
                 alt="screenshot - mobile"
                 className="w-1/2"
               />
             </div>
             <div className="">
               <img
-                src="/public/assets/images/screenshot - desktop.png"
+                src="/assets/images/screenshot - desktop.png"
                 alt="screenshot - desktop"
                 className="rounded-lg"
               />
