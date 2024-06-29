@@ -76,3 +76,21 @@ export const landingPageImage = [
     imageUrl: "/assets/images/food/skewers.jpeg",
   },
 ];
+
+export const sponsor = [
+  {
+    id: 1,
+    imageUrl: "/assets/images/money theory.png",
+    url: "https://www.youtube.com/@moneytheory",
+    title: "Money Theory Youtube",
+    description: "Educational videos about finance and investment",
+  },
+  {
+    id: 2,
+    imageUrl: "/assets/images/money theory.png",
+    url: "https://www.patreon.com/moneytheory",
+    title: "Money Theory Patreon",
+    description:
+      "Patreon members that support the Money Theory Youtube channel",
+  },
+];

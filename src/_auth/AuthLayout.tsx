@@ -1,9 +1,10 @@
 import { Outlet, Navigate, useNavigate } from "react-router-dom";
-import { baseUrl, landingPageImage } from "@/constants";
+import { baseUrl, landingPageImage, sponsor } from "@/constants";
 import { useUserContext } from "@/context/AuthContext";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import GridImageList from "@/components/shared/GridImageList";
+import SponsorList from "@/components/shared/SponsorList";
 
 const AuthLayout = () => {
   const isAuthenticated = useUserContext().isAuthenticated;
@@ -26,7 +27,7 @@ const AuthLayout = () => {
       {isAuthenticated ? (
         <Navigate to="/" />
       ) : (
-        <section className="grid w-full p-2 sm:p-5 gap-6">
+        <section className="grid w-full p-2 sm:p-5 gap-6 text-lg md:text-xl ">
           {/* Title */}
           <section className="grid grid-cols-1">
             <div className="flex flex-col items-center gap-5">
@@ -35,7 +36,7 @@ const AuthLayout = () => {
                 alt="logo"
                 className="w-1/4 md:w-1/6"
               />
-              <h1 className="text-3xl ">
+              <h1 className="text-2xl ">
                 Newest community connecting all Foodies, restaurants, and cafes
               </h1>
               <h1>
@@ -44,10 +45,18 @@ const AuthLayout = () => {
               </h1>
               {/* Join button */}
               <div className="flex flex-row gap-10">
-                <Button className="shad-button_primary" onClick={visibleSignUp}>
-                  {isVisible ? "Close Menu" : "Join"}
+                <Button
+                  className=" bg-rose-400  text-light-1 p-3  md:p-6 md:text-xl"
+                  onClick={visibleSignUp}
+                >
+                  {isVisible ? "Close Menu" : "Register"}
                 </Button>
-                <Button className="shad-button_primary" onClick={visibleSignIn}>
+                <Button
+                  className={`bg-rose-400  text-light-1 p-3  md:p-6 md:text-xl ${
+                    isVisible && "hidden"
+                  } `}
+                  onClick={visibleSignIn}
+                >
                   {isVisible ? "Close Menu" : "Sign In"}
                 </Button>
               </div>
@@ -65,14 +74,14 @@ const AuthLayout = () => {
 
             <div className=" p-5">
               {
-                // @ts-expect-error Model.document[]
+                // @ts-expect-error object type
                 <GridImageList imageList={landingPageImage} />
               }
             </div>
           </section>
 
-          {/* value */}
-          <section className="grid grid-cols-1 md:grid-cols-2">
+          {/* screenshot */}
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="flex flex-col gap-2 flex-wrap items-center">
               <img
                 src="/assets/images/screenshot - mobile.png"
@@ -90,9 +99,35 @@ const AuthLayout = () => {
           </section>
 
           {/* sponsor */}
-          <section className="grid grid-cols-1 md:grid-cols-2">
-            <div className=" "></div>
-            <div className=""></div>
+          <section className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
+            <div className="flex flex-col gap-3">
+              <h1 className="title">
+                In partnership with our community sponsors
+              </h1>
+              {
+                // @ts-expect-error object type
+                <SponsorList list={sponsor} />
+              }
+            </div>
+            <div className="flex flex-col gap-3">
+              <h1 className="title">Become a sponsor</h1>
+              <p>
+                This is a great way to represent your brand, and put your logo
+                and business in front many food lovers and restaurants.
+                Businesses include (but are not limited to):
+              </p>
+              <ul className="px-7">
+                <li>Restaurant, cafe</li>
+                <li>Distributor</li>
+                <li>Payment service, business solutions, marketing</li>
+              </ul>
+              <p>Sponsorship benefits include:</p>
+              <ul className="px-7">
+                <li>Logo placement on landing page and sponsors page</li>
+                <li>Link to your company website</li>
+                <li>Company description, max 50 words</li>
+              </ul>
+            </div>
           </section>
         </section>
       )}

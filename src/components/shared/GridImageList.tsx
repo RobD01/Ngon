@@ -1,14 +1,14 @@
 type GridImageListProps = {
   imageList: [
     {
-      id: string;
+      id: number;
       imageUrl: string;
     }
   ];
 };
 
 type GridImageProps = {
-  id: string;
+  id: number;
   imageUrl: string;
 };
 
