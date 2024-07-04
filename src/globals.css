@@ -359,5 +359,5 @@
 
 .title {
   font-family: "Montserrat", sans-serif;
-  @apply tracking-widest text-lg font-bold;
+  @apply tracking-widest text-lg font-bold text-rose-400;
 }

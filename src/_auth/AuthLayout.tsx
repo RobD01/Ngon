@@ -99,7 +99,7 @@ const AuthLayout = () => {
           </section>
 
           {/* sponsor */}
-          <section className="grid grid-cols-1 md:grid-cols-2 p-5 gap-5">
+          <section className="grid grid-cols-1 md:grid-cols-2 p-5 gap-10">
             <div className="flex flex-col gap-3">
               <h1 className="title">
                 In partnership with our community sponsors
@@ -113,19 +113,21 @@ const AuthLayout = () => {
               <h1 className="title">Become a sponsor</h1>
               <p>
                 This is a great way to represent your brand, and put your logo
-                and business in front many food lovers and restaurants.
+                and business in front of many food lovers and restaurants.
                 Businesses include (but are not limited to):
               </p>
-              <ul className="px-7">
-                <li>Restaurant, cafe</li>
-                <li>Distributor</li>
-                <li>Payment service, business solutions, marketing</li>
+              <ul className="pl-5">
+                <li>&#x2022; Restaurant, cafe</li>
+                <li>&#x2022; Distributor</li>
+                <li>&#x2022; Payment service, business solutions, marketing</li>
               </ul>
               <p>Sponsorship benefits include:</p>
-              <ul className="px-7">
-                <li>Logo placement on landing page and sponsors page</li>
-                <li>Link to your company website</li>
-                <li>Company description, max 50 words</li>
+              <ul className="pl-5">
+                <li>
+                  &#x2022; Logo placement on landing page and sponsors page
+                </li>
+                <li>&#x2022; Link to your company website</li>
+                <li>&#x2022; Company description, max 50 words</li>
               </ul>
             </div>
           </section>

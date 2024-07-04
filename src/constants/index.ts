@@ -81,16 +81,23 @@ export const sponsor = [
   {
     id: 1,
     imageUrl: "/assets/images/money theory.png",
+    url: "https://www.patreon.com/moneytheory",
+    title: "Money Theory Patreon",
+    description:
+      "Becoming a Patreon member will also support the development of this app",
+  },
+  {
+    id: 2,
+    imageUrl: "/assets/images/youtube.JPG",
     url: "https://www.youtube.com/@moneytheory",
     title: "Money Theory Youtube",
     description: "Educational videos about finance and investment",
   },
   {
-    id: 2,
-    imageUrl: "/assets/images/money theory.png",
-    url: "https://www.patreon.com/moneytheory",
-    title: "Money Theory Patreon",
-    description:
-      "Patreon members that support the Money Theory Youtube channel",
+    id: 3,
+    imageUrl: "/assets/images/book.png",
+    url: "https://www.amazon.com/dp/B08P9LD9L7?binding=paperback",
+    title: "ABC to Vietnamese",
+    description: "Children's book series to teach Vietnamese",
   },
 ];
