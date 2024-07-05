@@ -315,8 +315,7 @@
   }
 
   .shad-button_primary {
-    @apply text-light-1 flex gap-2 p-2 md:p-4;
-    background-color: var(--color5);
+    @apply text-light-1 flex gap-2 p-2 md:p-4 bg-rose-400;
   }
   .shad-button_primary:hover {
     @apply shadow-md;

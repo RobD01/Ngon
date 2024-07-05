@@ -111,6 +111,9 @@ const AuthLayout = () => {
               >
                 <Button className="shad-button_primary px-10">Buy</Button>
               </Link>
+              <p className="text-rose-700 text-sm">
+                Buy button will open a new window to the stripe platform
+              </p>
               <p>
                 This is a great way to put your brand and business in front of
                 many food lovers and restaurants. Businesses include (but are

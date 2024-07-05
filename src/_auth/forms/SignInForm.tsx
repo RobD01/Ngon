@@ -120,7 +120,7 @@ const SignInForm = () => {
             Don't have an account?
             <Link
               to="/sign-up"
-              className="text-primary-600 text-small-semibold ml-2"
+              className="text-rose-400 text-small-semibold ml-2"
             >
               Sign up
             </Link>
