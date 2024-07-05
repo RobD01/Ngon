@@ -1,4 +1,4 @@
-import { Outlet, Navigate, useNavigate } from "react-router-dom";
+import { Outlet, Navigate, useNavigate, Link } from "react-router-dom";
 import { baseUrl, landingPageImage, sponsor } from "@/constants";
 import { useUserContext } from "@/context/AuthContext";
 import { useState } from "react";
@@ -101,25 +101,24 @@ const AuthLayout = () => {
           {/* sponsor */}
           <section className="grid grid-cols-1 md:grid-cols-2 p-5 gap-10">
             <div className="flex flex-col gap-3">
-              <h1 className="title">
-                In partnership with our community sponsors
-              </h1>
-              {
-                // @ts-expect-error object type
-                <SponsorList list={sponsor} />
-              }
-            </div>
-            <div className="flex flex-col gap-3">
               <h1 className="title">Become a sponsor</h1>
+
+              <Link
+                to="https://buy.stripe.com/bIY28n7vy1kd9MIfZ1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center"
+              >
+                <Button className="shad-button_primary px-10">Buy</Button>
+              </Link>
               <p>
-                This is a great way to represent your brand, and put your logo
-                and business in front of many food lovers and restaurants.
-                Businesses include (but are not limited to):
+                This is a great way to put your brand and business in front of
+                many food lovers and restaurants. Businesses include (but are
+                not limited to):
               </p>
               <ul className="pl-5">
-                <li>&#x2022; Restaurant, cafe</li>
-                <li>&#x2022; Distributor</li>
-                <li>&#x2022; Payment service, business solutions, marketing</li>
+                <li>&#x2022; Restaurant, cafe, bar, dessert</li>
+                <li>&#x2022; Payment service, accounting, marketing</li>
               </ul>
               <p>Sponsorship benefits include:</p>
               <ul className="pl-5">
@@ -129,6 +128,15 @@ const AuthLayout = () => {
                 <li>&#x2022; Link to your company website</li>
                 <li>&#x2022; Company description, max 50 words</li>
               </ul>
+            </div>
+            <div className="flex flex-col gap-3">
+              <h1 className="title">
+                In partnership with our community sponsors
+              </h1>
+              {
+                // @ts-expect-error object type
+                <SponsorList list={sponsor} />
+              }
             </div>
           </section>
         </section>

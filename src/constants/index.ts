@@ -88,7 +88,7 @@ export const sponsor = [
   },
   {
     id: 2,
-    imageUrl: "/assets/images/youtube.JPG",
+    imageUrl: "/assets/images/youtube.png",
     url: "https://www.youtube.com/@moneytheory",
     title: "Money Theory Youtube",
     description: "Educational videos about finance and investment",
