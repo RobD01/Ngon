@@ -125,6 +125,15 @@ const SignInForm = () => {
               Sign up
             </Link>
           </p>
+          <p className="text-small-regular  text-center mt-2 ">
+            Forgot password?
+            <Link
+              to="/reset-password-request"
+              className="text-rose-400 text-small-semibold ml-2"
+            >
+              Click here
+            </Link>
+          </p>
         </form>
       </div>
     </Form>

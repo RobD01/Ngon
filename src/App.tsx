@@ -17,15 +17,23 @@ import SignUpForm from "./_auth/forms/SignUpForm";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/pages/RootLayout";
 import { Toaster } from "./components/ui/toaster";
+import PasswordResetRequest from "./_auth/forms/PasswordResetRequest";
+import PasswordReset from "./_auth/forms/PasswordReset";
 
 const App = () => {
   return (
     <main className="flex h-screen">
       <Routes>
         {/* public */}
+        <Route path="/reset-password" element={<PasswordReset />} />
+
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SignInForm />} />
           <Route path="/sign-up" element={<SignUpForm />} />
+          <Route
+            path="/reset-password-request"
+            element={<PasswordResetRequest />}
+          />
         </Route>
         {/* private */}
         <Route element={<RootLayout />}>
