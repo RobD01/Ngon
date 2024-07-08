@@ -11,7 +11,6 @@ const PasswordReset = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
-  //   const { userId, secret } = useParams();
   const query = useQuery();
   const userId = query.get("userId");
   const secret = query.get("secret");
