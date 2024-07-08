@@ -16,6 +16,7 @@ const PasswordReset = () => {
   const secret = query.get("secret");
   const navigate = useNavigate();
 
+  // @ts-expect-error event form
   const handlePasswordReset = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -23,6 +24,7 @@ const PasswordReset = () => {
       return;
     }
     try {
+      // @ts-expect-error user can be null
       await account.updateRecovery(userId, secret, password, confirmPassword);
       setMessage("Password reset successful.");
       setTimeout(() => {

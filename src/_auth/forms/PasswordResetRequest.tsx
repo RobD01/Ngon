@@ -6,6 +6,7 @@ const PasswordResetRequest = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  // @ts-expect-error event form
   const handlePasswordResetRequest = async (e) => {
     e.preventDefault();
     try {
