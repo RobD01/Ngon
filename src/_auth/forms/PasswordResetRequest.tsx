@@ -9,10 +9,7 @@ const PasswordResetRequest = () => {
   const handlePasswordResetRequest = async (e) => {
     e.preventDefault();
     try {
-      await account.createRecovery(
-        email,
-        `http://localhost:5173/reset-password`
-      );
+      await account.createRecovery(email, `ngonapp.com/reset-password`);
       setMessage("Password reset link sent to your email.");
     } catch (error) {
       setMessage("Error sending password reset link.");
@@ -36,6 +33,7 @@ const PasswordResetRequest = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="p-2"
         />
         <Button type="submit" className="shad-button_primary">
           Send Reset Link

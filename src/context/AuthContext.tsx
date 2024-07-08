@@ -1,7 +1,7 @@
 import { getCurrentUser } from "@/lib/appwrite/api";
 import { IUser } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const INITIAL_USER = {
   id: "",
@@ -38,8 +38,11 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const checkAuthUser = async () => {
+    console.log(location.pathname);
+
     setIsLoading(true);
     try {
       const currentAccount = await getCurrentUser();
@@ -69,9 +72,10 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const cookieFallback = localStorage.getItem("cookieFallback");
     if (
-      cookieFallback === "[]" ||
-      cookieFallback === null ||
-      cookieFallback === undefined
+      location.pathname !== "/reset-password" &&
+      (cookieFallback === "[]" ||
+        cookieFallback === null ||
+        cookieFallback === undefined)
     )
       navigate("/sign-in");
 
