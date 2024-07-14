@@ -41,8 +41,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   const checkAuthUser = async () => {
-    console.log(location.pathname);
-
     setIsLoading(true);
     try {
       const currentAccount = await getCurrentUser();

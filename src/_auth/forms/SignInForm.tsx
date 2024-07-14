@@ -65,13 +65,12 @@ const SignInForm = () => {
 
   return (
     <Form {...form}>
-      <div className="sm:w-420 flex-center flex-col">
+      <div className="sm:w-420 flex-center flex-col gap-5">
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-5">
           Log into your account
         </h2>
-        <p className="small-medium md:base-regular">
-          Please enter account details
-        </p>
+
+        <p className="base-regular">Or please enter account details</p>
 
         <form
           onSubmit={form.handleSubmit(onSubmit)}

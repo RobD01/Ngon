@@ -47,8 +47,6 @@ const SignUpForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     const newUser = await createUserAccount(values);
     if (!newUser) {
       return toast({
@@ -80,12 +78,13 @@ const SignUpForm = () => {
 
   return (
     <Form {...form}>
-      <div className="sm:w-420 flex-center flex-col">
+      <div className="sm:w-420 flex-center flex-col gap-5">
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-5">
           Create a new account
         </h2>
+        {/* <GoogleLogIn /> */}
         <p className="small-medium md:base-regular">
-          Please enter account details
+          or please enter account details
         </p>
 
         <form

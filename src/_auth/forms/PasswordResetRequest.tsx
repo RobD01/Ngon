@@ -10,7 +10,7 @@ const PasswordResetRequest = () => {
   const handlePasswordResetRequest = async (e) => {
     e.preventDefault();
     try {
-      await account.createRecovery(email, `ngonapp.com/reset-password`);
+      await account.createRecovery(email, `https://ngonapp.com/reset-password`);
       setMessage("Password reset link sent to your email.");
     } catch (error) {
       setMessage("Error sending password reset link.");
