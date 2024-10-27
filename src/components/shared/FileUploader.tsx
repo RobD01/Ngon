@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
 import { Button } from "../ui/button";
-import { baseUrl } from "@/constants";
 
 type FileUploaderProps = {
   fieldChange: (FILES: File[]) => void;
@@ -40,14 +39,16 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
       ) : (
         <div className="file_uploader-box">
           <img
-            src={baseUrl + "/assets/icons/file-upload.svg"}
-            width={96}
-            height={77}
+            src={"/assets/icons/file-upload3.svg"}
+            width={60}
+            height={60}
             alt="file-upload"
           />
-          <h3 className="base-medium mb-2 mt-6">Drag photo here</h3>
+          <h3 className="base-medium mb-2 mt-6">
+            Drag and drop photo to upload
+          </h3>
           <p className="text-light-4 small-regular mb-6">SVG, PNG, JPG</p>
-          <Button className="shad-button-primary">Select from computer</Button>
+          <Button className="shad-button_primary">Select from computer</Button>
         </div>
       )}
     </div>

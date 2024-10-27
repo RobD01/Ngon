@@ -146,7 +146,7 @@
 
   /* Explore */
   .explore-container {
-    @apply flex flex-col flex-1 items-center overflow-scroll py-10 px-2 md:p-14 custom-scrollbar;
+    @apply flex flex-col flex-1 items-center overflow-scroll py-5 px-2 md:p-7 custom-scrollbar;
   }
 
   .explore-inner_container {
@@ -235,7 +235,7 @@
   }
 
   .file_uploader-box {
-    @apply flex-center flex-col p-7 h-80 lg:h-[612px];
+    @apply flex-center flex-col p-4 bg-light-1 rounded-lg shadow-md;
   }
 
   /* Grid Post List */
@@ -359,4 +359,8 @@
 .title {
   font-family: "Montserrat", sans-serif;
   @apply tracking-widest text-lg font-bold text-rose-400;
+}
+
+.loading {
+  display: none;
 }

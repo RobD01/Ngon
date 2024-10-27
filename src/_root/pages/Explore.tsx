@@ -41,12 +41,13 @@ const Explore = () => {
         <h2 className="h3-bold md:h2-bold w-full"> Search Posts</h2>
 
         {/* search */}
-        <section className="flex gap-1 px-4 py-1 w-full rounded-lg bg-light-1 shadow-md">
+        <section className="flex gap-1 px-3 py-1 w-full rounded-lg bg-light-1 shadow-md mb-5">
           <img
-            src={baseUrl + "/assets/icons/search.svg"}
+            src={"/assets/icons/search.svg"}
             alt="search"
             width={24}
             height={24}
+            className="mx-2"
           />
           <Input
             type="text"
@@ -58,19 +59,18 @@ const Explore = () => {
         </section>
       </div>
 
-      {/* explore */}
-      <section className="flex-between w-full max-w-5xl mt-8 md:mt-16  mb-7">
-        <h2 className="body-bold md:h3-bold">Popular Today</h2>
+      {/* Filter */}
+      {/* <section className="flex-between w-full max-w-5xl my-7">
         <div className="search-filter ">
           <p className="small-medium md:base-medium">All</p>
           <img
-            src={baseUrl + "/assets/icons/filter.svg"}
+            src={"/assets/icons/filter.svg"}
             width={20}
             height={20}
             alt="filter"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Search Results */}
       <section className="flex flex-wrap gap-9 w-full max-w-5xl">

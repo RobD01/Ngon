@@ -82,22 +82,9 @@ const PostForm = ({ post, action }: PostFormProps) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex-col gap-9 w-full max-w-5xl"
+        className="flex flex-col gap-9 w-full max-w-5xl"
       >
-        <FormField
-          control={form.control}
-          name="caption"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="">Caption</FormLabel>
-              <FormControl>
-                <Textarea className="" {...field} />
-              </FormControl>
-              <FormMessage className="shad-form_message" />
-            </FormItem>
-          )}
-        />
-
+        {/* upload photo */}
         <FormField
           control={form.control}
           name="file"
@@ -115,6 +102,23 @@ const PostForm = ({ post, action }: PostFormProps) => {
             </FormItem>
           )}
         />
+
+        {/* caption */}
+        <FormField
+          control={form.control}
+          name="caption"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="">Caption</FormLabel>
+              <FormControl>
+                <Textarea className="" {...field} />
+              </FormControl>
+              <FormMessage className="shad-form_message" />
+            </FormItem>
+          )}
+        />
+
+        {/* location */}
         <FormField
           control={form.control}
           name="location"
@@ -129,6 +133,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
             </FormItem>
           )}
         />
+
+        {/* tags */}
         <FormField
           control={form.control}
           name="tags"
@@ -149,6 +155,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
             </FormItem>
           )}
         />
+
+        {/* submit */}
         <div className="flex gap-4 items-center justify-end">
           <Button type="button" onClick={() => navigate(-1)}>
             Cancel
