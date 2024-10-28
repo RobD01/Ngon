@@ -1,11 +1,14 @@
 import BlankSnack from "@/components/shared/BlankSnack";
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
+import { useUserContext } from "@/context/AuthContext";
 import { useGetSavedPosts } from "@/lib/react-query/queries";
 
 const Saved = () => {
   // const { data: currentUser } = useGetCurrentUser();
   const { data: savedList, isPending } = useGetSavedPosts();
+
+  const { user: currentUser } = useUserContext();
 
   const savedPost: Array<object> = [];
   !isPending
