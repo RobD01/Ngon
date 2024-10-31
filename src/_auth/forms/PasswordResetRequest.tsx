@@ -28,6 +28,7 @@ const PasswordResetRequest = () => {
           Please enter the account email. We will send you an email with a link
           to reset the password
         </p>
+
         <input
           type="email"
           placeholder="Enter your email"
@@ -41,6 +42,27 @@ const PasswordResetRequest = () => {
         </Button>
       </form>
       {message && <p>{message}</p>}
+      <section className="flex flex-col gap-2 sm:w-2/3 m-4">
+        <p>
+          Note: We apologize that due to code limitations, you need to slightly
+          modify the link in the email.
+        </p>
+        <p>
+          You will get a link like this: <br />
+          https://ngonapp.com/reset-password?userId=#&secret=#
+        </p>
+        <p>
+          Add a <span className="text-rose-600 font-semibold">/#</span> after{" "}
+          <span className="text-rose-600 font-semibold">.com</span>
+        </p>
+        <p>
+          To make the link like this: <br />
+          https://ngonapp.com
+          <span className="text-rose-600 font-semibold">/#</span>
+          /reset-password?userId=#&secret=#
+        </p>
+        <p>Then that link to go to the reset page</p>
+      </section>
     </div>
   );
 };

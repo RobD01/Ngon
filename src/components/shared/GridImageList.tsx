@@ -19,8 +19,9 @@ const GridImageList = ({ imageList }: GridImageListProps) => {
         <li key={image?.id} className="">
           <img
             src={image?.imageUrl}
-            alt="image"
+            alt="Ngon post image"
             className="h-full  object-cover w-full rounded-[10px]"
+            loading="lazy"
           />
         </li>
       ))}
