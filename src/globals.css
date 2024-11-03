@@ -141,7 +141,7 @@
   }
 
   .user-grid {
-    @apply w-full grid grid-cols-3 gap-7 max-w-5xl;
+    @apply w-full grid grid-cols-2 md:grid-cols-3 gap-7 max-w-5xl;
   }
 
   /* Explore */
@@ -240,7 +240,7 @@
 
   /* Grid Post List */
   .grid-container {
-    @apply w-full grid grid-cols-3 gap-1;
+    @apply w-full grid  grid-cols-3 gap-1;
   }
 
   .grid-post_link {

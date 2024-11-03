@@ -1,5 +1,6 @@
 import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
+import { getCurrentUser } from "@/lib/appwrite/api";
 import { useGetRecentPosts } from "@/lib/react-query/queries";
 import { Models } from "appwrite";
 
@@ -22,6 +23,8 @@ const Home = () => {
       </div>
     );
   }
+
+  getCurrentUser();
 
   return (
     <div className="flex flex-1">

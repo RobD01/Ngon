@@ -19,6 +19,7 @@ import Loader from "@/components/shared/Loader";
 import { useToast } from "@/components/ui/use-toast";
 import { useSignInAccount } from "@/lib/react-query/queries";
 import { useUserContext } from "@/context/AuthContext";
+import { GoogleLogIn } from "@/components/shared/GoogleLogIn";
 
 const SignInForm = () => {
   const { toast } = useToast();
@@ -69,7 +70,7 @@ const SignInForm = () => {
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-5">
           Log into your account
         </h2>
-
+        <GoogleLogIn />
         <p className="base-regular">Or please enter account details</p>
 
         <form

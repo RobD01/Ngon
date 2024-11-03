@@ -23,6 +23,8 @@ import {
   getUsers,
   getUserById,
   getUserPosts,
+  googleSignIn,
+  createGoogleUserAccount,
 } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost } from "@/types";
 import { QUERY_KEYS } from "./queryKeys";
@@ -30,6 +32,12 @@ import { QUERY_KEYS } from "./queryKeys";
 export const useCreateUserAccount = () => {
   return useMutation({
     mutationFn: (user: INewUser) => createUserAccount(user),
+  });
+};
+
+export const useCreateGoogleUserAccount = () => {
+  return useMutation({
+    mutationFn: () => createGoogleUserAccount(),
   });
 };
 

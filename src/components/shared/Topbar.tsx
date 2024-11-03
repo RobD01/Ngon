@@ -19,12 +19,12 @@ const Topbar = () => {
       <div className="flex-between flex-wrap py-1 px-5 ">
         <Link
           to="/"
-          className="flex gap-3 items-center text-lg rounded-xl border-4 border-rose-300 bg-white px-2 text-rose-400"
+          className="flex gap-1 items-center text-lg rounded-xl border-b-4  border-rose-300 bg-white px-2 text-rose-400"
         >
           <img
             src={baseUrl + "/assets/images/logo-menu.png"}
             alt="logo"
-            width={40}
+            width={35}
           />
           <span className="title">ngon</span>
         </Link>
