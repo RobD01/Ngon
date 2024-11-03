@@ -1,12 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { getCurrentUser } from "@/lib/appwrite/api";
 import { account } from "@/lib/appwrite/config";
-import {
-  useCreateGoogleUserAccount,
-  useGetUserById,
-} from "@/lib/react-query/queries";
+import { useCreateGoogleUserAccount } from "@/lib/react-query/queries";
 
-export const GoogleLogIn = () => {
+export const GoogleSignUp = () => {
   const { mutateAsync: createGoogleUserAccount } = useCreateGoogleUserAccount();
 
   const googleAuth = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,18 +18,13 @@ export const GoogleLogIn = () => {
       console.log(error);
     }
 
-    try {
-      getCurrentUser();
-      console.log("account already on database");
-    } catch {
-      createGoogleUserAccount();
-      console.log("creating new account");
-    }
+    createGoogleUserAccount();
+    console.log("creating new account");
   };
 
   return (
     <Button
-      className="text-lg  bg-light-1 p-3 shadow-sm w-3/4 hover:border-2"
+      className="text-lg  bg-light-1 p-3 shadow-sm sm:w-3/4 hover:border-2"
       onClick={(e) => googleAuth(e)}
     >
       <img
@@ -41,7 +32,7 @@ export const GoogleLogIn = () => {
         alt="google"
         className="w-7 mr-2"
       />
-      Google Sign Up
+      Register with Google
     </Button>
   );
 };

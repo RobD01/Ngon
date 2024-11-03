@@ -56,9 +56,13 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsAuthenticated(true);
 
         return true;
-      }
 
-      return false;
+        console.log("authenticated");
+      } else {
+        console.log("not authenticated");
+
+        return false;
+      }
     } catch (error) {
       console.error(error);
       return false;
@@ -67,6 +71,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  // redirect to sign-in page if not authenticated
   // useEffect(() => {
   //   const cookieFallback = localStorage.getItem("cookieFallback");
   //   if (

@@ -24,7 +24,8 @@ const Home = () => {
     );
   }
 
-  getCurrentUser();
+  const currentAccount = getCurrentUser();
+  console.log(currentAccount);
 
   return (
     <div className="flex flex-1">

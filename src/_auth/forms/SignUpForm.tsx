@@ -23,6 +23,7 @@ import {
   useSignInAccount,
 } from "@/lib/react-query/queries";
 import { useUserContext } from "@/context/AuthContext";
+import { GoogleSignUp } from "@/components/shared/GoogleSignUp";
 
 const SignUpForm = () => {
   const { toast } = useToast();
@@ -82,7 +83,7 @@ const SignUpForm = () => {
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-5">
           Create a new account
         </h2>
-        {/* <GoogleLogIn /> */}
+        <GoogleSignUp />
         <p className="small-medium md:base-regular">
           or please enter account details
         </p>
