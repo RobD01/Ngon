@@ -71,18 +71,18 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // redirect to sign-in page if not authenticated
-  // useEffect(() => {
-  //   const cookieFallback = localStorage.getItem("cookieFallback");
-  //   if (
-  //     location.pathname !== "/reset-password" &&
-  //     (cookieFallback === "[]" ||
-  //       cookieFallback === null ||
-  //       cookieFallback === undefined)
-  //   )
-  //     navigate("/sign-in");
+  useEffect(() => {
+    const cookieFallback = localStorage.getItem("cookieFallback");
+    if (
+      location.pathname !== "/reset-password" &&
+      (cookieFallback === "[]" ||
+        cookieFallback === null ||
+        cookieFallback === undefined)
+    )
+      navigate("/sign-in");
 
-  //   checkAuthUser();
-  // }, []);
+    checkAuthUser();
+  }, []);
 
   const value = {
     user,
