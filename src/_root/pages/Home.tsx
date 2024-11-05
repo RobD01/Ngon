@@ -1,20 +1,7 @@
 import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
-import { useUserContext } from "@/context/AuthContext";
-import { getCurrentUser } from "@/lib/appwrite/api";
 import { useGetRecentPosts } from "@/lib/react-query/queries";
 import { Models } from "appwrite";
-
-const checkAuthUser = async () => {
-  try {
-    const currentAccount = await getCurrentUser();
-
-    console.log(currentAccount);
-  } catch (error) {
-    console.error(error);
-    return false;
-  }
-};
 
 const Home = () => {
   const {
