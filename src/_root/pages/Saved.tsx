@@ -4,7 +4,6 @@ import Loader from "@/components/shared/Loader";
 import { useGetSavedPosts } from "@/lib/react-query/queries";
 
 const Saved = () => {
-  // const { data: currentUser } = useGetCurrentUser();
   const { data: savedList, isPending } = useGetSavedPosts();
 
   const savedPost: Array<object> = [];

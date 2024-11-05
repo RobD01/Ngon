@@ -19,7 +19,7 @@ import Loader from "@/components/shared/Loader";
 import { useToast } from "@/components/ui/use-toast";
 import { useSignInAccount } from "@/lib/react-query/queries";
 import { useUserContext } from "@/context/AuthContext";
-import { GoogleSignIn } from "@/components/shared/GoogleSignIn";
+import { GoogleSignUp } from "@/components/shared/GoogleSignUp";
 
 const SignInForm = () => {
   const { toast } = useToast();
@@ -60,7 +60,7 @@ const SignInForm = () => {
       form.reset();
       navigate("/");
     } else {
-      return toast({ title: "Sign up failed. Please try again" });
+      return toast({ title: "Sign in failed. Please try again" });
     }
   }
 
@@ -70,7 +70,7 @@ const SignInForm = () => {
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-5">
           Log into your account
         </h2>
-        <GoogleSignIn />
+        <GoogleSignUp />
         <p className="base-regular">Or please enter account details</p>
 
         <form

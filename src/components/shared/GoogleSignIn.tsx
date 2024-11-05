@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
+// import { useUserContext } from "@/context/AuthContext";
 import { account } from "@/lib/appwrite/config";
+import { useNavigate } from "react-router-dom";
+import { toast } from "../ui/use-toast";
 
-export const GoogleSignIn = () => {
+export const GoogleSignIn = async () => {
+  // const { checkAuthUser } = useUserContext();
+  const navigate = useNavigate();
+  // const isLoggedIn = await checkAuthUser();
+
   const googleAuth = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
@@ -11,11 +18,15 @@ export const GoogleSignIn = () => {
         "http://localhost:5173/",
         "http://localhost:5173/sign-up"
       );
+
+      // if (isLoggedIn) {
+      //   navigate("/");
+      // } else {
+      //   return toast({ title: "Sign in failed. Please try again" });
+      // }
     } catch (error) {
       console.log(error);
     }
-
-    console.log("Google log in success");
   };
 
   return (

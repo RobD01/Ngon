@@ -33,18 +33,21 @@ export async function createUserAccount(user: INewUser) {
 }
 
 export async function createGoogleUserAccount() {
-  try {
-    account.get().then((newAccount) =>
-      saveUserToDB({
-        accountId: newAccount.$id,
-        name: newAccount.name,
-        email: newAccount.email,
-        username: newAccount.name,
-        imageUrl: avatars.getInitials(newAccount.name),
-      })
-    );
-  } catch (error) {
-    return null;
+  const accountExists = await getCurrentUser();
+  if (!accountExists) {
+    try {
+      account.get().then((newAccount) =>
+        saveUserToDB({
+          accountId: newAccount.$id,
+          name: newAccount.name,
+          email: newAccount.email,
+          username: newAccount.name,
+          imageUrl: avatars.getInitials(newAccount.name),
+        })
+      );
+    } catch (error) {
+      return null;
+    }
   }
 }
 

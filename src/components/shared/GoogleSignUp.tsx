@@ -32,7 +32,7 @@ export const GoogleSignUp = () => {
         alt="google"
         className="w-7 mr-2"
       />
-      Register with Google
+      Use Google Account
     </Button>
   );
 };
