@@ -23,7 +23,6 @@ import {
   getUsers,
   getUserById,
   getUserPosts,
-  googleSignIn,
   createGoogleUserAccount,
 } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost } from "@/types";
