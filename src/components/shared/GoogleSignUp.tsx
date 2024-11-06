@@ -12,7 +12,7 @@ export const GoogleSignUp = () => {
       account.createOAuth2Session(
         "google",
         "http://ngonapp.com/",
-        "appwrite.io"
+        "localhost:5173"
       );
     } catch (error) {
       console.log(error);
