@@ -11,8 +11,8 @@ export const GoogleSignUp = () => {
     try {
       account.createOAuth2Session(
         "google",
-        "http://localhost:5173/",
-        "http://localhost:5173/sign-up"
+        "http://ngonapp.com/",
+        "http:////ngonapp.com/#/sign-up"
       );
     } catch (error) {
       console.log(error);
