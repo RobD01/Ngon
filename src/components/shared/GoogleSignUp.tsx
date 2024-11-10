@@ -19,7 +19,17 @@ export const GoogleSignUp = () => {
     }
 
     createGoogleUserAccount();
-    console.log("creating new account");
+    console.log("function createGoogleUserAccount");
+
+    try {
+      account.createOAuth2Session(
+        "google",
+        "http://ngonapp.com/",
+        "http://ngonapp.com/#/sign-up"
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

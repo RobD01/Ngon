@@ -36,6 +36,8 @@ export async function createGoogleUserAccount() {
   const accountExists = await getCurrentUser();
   if (!accountExists) {
     try {
+      console.log("account not exist");
+
       account.get().then((newAccount) =>
         saveUserToDB({
           accountId: newAccount.$id,
