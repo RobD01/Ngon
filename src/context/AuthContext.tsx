@@ -1,4 +1,4 @@
-import { getAccount, getCurrentUser } from "@/lib/appwrite/api";
+import { getCurrentUser } from "@/lib/appwrite/api";
 import { IUser } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
