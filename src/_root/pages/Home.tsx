@@ -1,9 +1,12 @@
 import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
+import { createGoogleUserAccount } from "@/lib/appwrite/api";
 import { useGetRecentPosts } from "@/lib/react-query/queries";
 import { Models } from "appwrite";
 
 const Home = () => {
+  createGoogleUserAccount();
+
   const {
     data: posts,
     isPending: isPostLoading,

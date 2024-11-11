@@ -1,4 +1,4 @@
-import { getCurrentUser } from "@/lib/appwrite/api";
+import { getAccount, getCurrentUser } from "@/lib/appwrite/api";
 import { IUser } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -73,6 +73,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // redirect to sign-in page if not authenticated
   useEffect(() => {
     const cookieFallback = localStorage.getItem("cookieFallback");
+
     if (
       location.pathname !== "/reset-password" &&
       (cookieFallback === "[]" ||

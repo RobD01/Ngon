@@ -33,6 +33,7 @@ export async function createUserAccount(user: INewUser) {
 }
 
 export async function createGoogleUserAccount() {
+  console.log("function createGoogleUserAccount");
   const accountExists = await getCurrentUser();
   if (!accountExists) {
     try {
@@ -50,6 +51,8 @@ export async function createGoogleUserAccount() {
     } catch (error) {
       return null;
     }
+  } else {
+    console.log("account exists. logging in");
   }
 }
 
