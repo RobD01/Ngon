@@ -8,8 +8,8 @@ export const GoogleSignUp = () => {
     try {
       account.createOAuth2Session(
         "google",
-        "http://ngonapp.com/",
-        "http://ngonapp.com/#/sign-up"
+        "https://ngonapp.com/",
+        "https://ngonapp.com/#/sign-up"
       );
     } catch (error) {
       console.log(error);
